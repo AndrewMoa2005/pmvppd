@@ -4,4 +4,4 @@ SET(SRC_LIST GUIDialog.cpp GUIDialog.h pmvppd.cpp pmvppd.h pmvppdApp.cpp pmvppdA
 ADD_EXECUTABLE(${PROJECT_NAME} ${SRC_LIST})
 FIND_PACKAGE(wxWidgets REQUIRED)
 INCLUDE(${wxWidgets_USE_FILE})
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${wxWidgets_LIBRARIES} -lUxTheme)
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
