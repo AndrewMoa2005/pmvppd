@@ -1,0 +1,83 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0309
+header_name {mwidget.hxx}
+code_name {mwidget.cxx}
+class MWidget {open
+} {
+  Function {make_window()} {open
+  } {
+    Fl_Window mWindow {
+      label {PMV PPD Calc} open
+      xywh {145 238 300 355} type Double visible
+    } {
+      Fl_Group {} {
+        label Input open
+        xywh {0 25 300 175} box DOWN_BOX
+      } {
+        Fl_Spinner spCLO {
+          label {CLO [clo]}
+          tooltip {clothing insulation [clo]} xywh {100 25 190 25} type Float minimum 0 maximum 999999 step 0.1 value 0.5
+        }
+        Fl_Spinner spMET {
+          label {MET [met]}
+          tooltip {metabolic rate [met]} xywh {100 50 190 25} type Float minimum 0 maximum 999999 step 0.1 value 1.2
+        }
+        Fl_Spinner spWME {
+          label {WME [met]}
+          tooltip {mechanical work [met]} xywh {100 75 190 25} type Float minimum 0 maximum 999999 step 0.1 value 0
+        }
+        Fl_Spinner spTA {
+          label {TA [Celsius]}
+          tooltip {air temperature [Celsius]} xywh {100 100 190 25} type Float minimum -273.15 maximum 999999 step 0.1 value 22
+        }
+        Fl_Spinner spVEL {
+          label {VEL [m/s]}
+          tooltip {air speed [m/s]} xywh {100 125 190 25} type Float minimum 0 maximum 999999 step 0.1 value 0.1
+        }
+        Fl_Spinner spTR {
+          label {MRT [Celsius]}
+          tooltip {mean radiant temperature [Celsius]} xywh {100 150 190 25} type Float minimum -273.15 maximum 999999 step 0.1 value 22
+        }
+        Fl_Spinner spRH {
+          label {RH [%]}
+          tooltip {relative humidity [%]} xywh {100 170 190 25} type Float minimum 0 step 0.1 value 60
+        }
+      }
+      Fl_Button bnCalc {
+        label CALCUNAR
+        user_data this
+        callback onBnCalc selected
+        xywh {5 200 290 25}
+      }
+      Fl_Group {} {
+        label Output
+        xywh {0 240 300 85} box DOWN_BOX
+      } {
+        Fl_Output spPMV {
+          label PMV
+          tooltip {predicted mean vote} xywh {100 245 190 25}
+        }
+        Fl_Output spPPD {
+          label {PPD [%]}
+          tooltip {predicted percentage of dissatisfied [%]} xywh {100 270 190 25}
+        }
+        Fl_Output spSET {
+          label {SET [Celsius]}
+          tooltip {standard effective temperature [Celsius]} xywh {100 295 190 25}
+        }
+      }
+      Fl_Button bnGen {
+        label {Generate template}
+        user_data this
+        callback onBnGen
+        tooltip {Generate template table file, using .csv format.} xywh {5 330 140 25}
+      }
+      Fl_Button bnHandle {
+        label {Handle .csv table}
+        user_data this
+        callback onBnHandle
+        tooltip {Upload and handle table file, using .csv format.} xywh {150 330 145 25}
+      }
+    }
+  }
+}

@@ -1,7 +1,0 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
-PROJECT(pmvppd)
-SET(SRC_LIST GUIDialog.cpp GUIDialog.h pmvppd.cpp pmvppd.h pmvppdApp.cpp pmvppdApp.h pmvppdMain.cpp pmvppdMain.h resource.rc)
-ADD_EXECUTABLE(${PROJECT_NAME} ${SRC_LIST})
-FIND_PACKAGE(wxWidgets REQUIRED)
-INCLUDE(${wxWidgets_USE_FILE})
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
